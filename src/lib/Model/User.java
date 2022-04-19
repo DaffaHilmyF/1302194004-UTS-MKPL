@@ -1,4 +1,4 @@
-package lib;
+package lib.Model;
 
 public class User {
     public enum Gender {

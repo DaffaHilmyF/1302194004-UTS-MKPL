@@ -1,10 +1,10 @@
-package lib;
+package lib.Model;
 
-public class Spouse {
+public class Child {
     private String name;
     private String id;
 
-    public Spouse(String id, String name) {
+    public Child(String id, String name) {
         this.id = id;
         this.name = name;
     }
