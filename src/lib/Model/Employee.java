@@ -2,6 +2,7 @@ package lib.Model;
 
 import java.time.LocalDate;
 import java.util.UUID;
+import java.util.List;
 
 import lib.TaxFunction;
 
