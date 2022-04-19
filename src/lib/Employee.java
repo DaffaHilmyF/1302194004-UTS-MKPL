@@ -19,9 +19,6 @@ public class Employee {
 	public Employee(String employeeId, String idNumber) {
 		this.employeeId = employeeId;
 		this.idNumber = idNumber;
-
-		childNames = new LinkedList<String>();
-		childIdNumbers = new LinkedList<String>();
 	}
 
 	/**
@@ -56,11 +53,6 @@ public class Employee {
 
 	public void setAdditionalIncome(int income) {
 		this.otherMonthlyIncome = income;
-	}
-
-	public void addChild(String childName, String childIdNumber) {
-		childNames.add(childName);
-		childIdNumbers.add(childIdNumber);
 	}
 
 	public int getAnnualIncomeTax() {
