@@ -22,6 +22,14 @@ public class TaxFunction {
 	 * 
 	 */
 
+	public int getTaxFromMarriedEmployee(Employee employee, int numberOfChildren) {
+
+	}
+
+	public int getTaxFromUnmarriedEmployee(Employee employee) {
+
+	}
+
 	public static int calculateTax(Employee employee) {
 
 		int tax = 0;
