@@ -3,64 +3,26 @@ package lib.Model;
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.UUID;
 
 import lib.TaxFunction;
 
 public class Employee {
 
 	private User employeeDetail;
+	private Spouse employeeSpouse;
+	private List<Child> employeeChild;
+
 	private String employeeId;
-	private String idNumber;
 	private boolean isForeigner;
 	private LocalDate dateJoined;
 	private int monthWorkingInYear;
-	private Spouse employeeSpouse;
-	private List<Child> childList;
 
-	private int monthlySalary;
-	private int otherMonthlyIncome;
-	private int annualDeductible;
-
-	public Employee(String employeeId, String idNumber, Spouse emplSpouse, User emplDetail) {
-		this.employeeDetail = emplDetail;
-		this.employeeId = employeeId;
-		this.idNumber = idNumber;
-		this.employeeSpouse = emplSpouse;
-		this.childList = new LinkedList<Child>();
-	}
-
-	/**
-	 * Fungsi untuk menentukan gaji bulanan pegawai berdasarkan grade kepegawaiannya
-	 * (grade 1: 3.000.000 per bulan, grade 2: 5.000.000 per bulan, grade 3:
-	 * 7.000.000 per bulan)
-	 * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
-	 */
-
-	public void setMonthlySalary(int grade) {
-		if (grade == 1) {
-			monthlySalary = 3000000;
-			if (isForeigner) {
-				monthlySalary = (int) (3000000 * 1.5);
-			}
-		} else if (grade == 2) {
-			monthlySalary = 5000000;
-			if (isForeigner) {
-				monthlySalary = (int) (3000000 * 1.5);
-			}
-		} else if (grade == 3) {
-			monthlySalary = 7000000;
-			if (isForeigner) {
-				monthlySalary = (int) (3000000 * 1.5);
-			}
-		}
-	}
-
-	public void setAnnualDeductible(int deductible) {
-		this.annualDeductible = deductible;
-	}
-
-	public void setAdditionalIncome(int income) {
-		this.otherMonthlyIncome = income;
+	public Employee(User employeeDetail, Spouse employeeSouse, List<Child> employeeChild) {
+		this.employeeId = UUID.randomUUID().toString();
+		this.employeeDetail = employeeDetail;
+		this.employeeSpouse = employeeSouse;
+		this.employeeChild = employeeChild;
 	}
 
 	public int getAnnualIncomeTax() {
