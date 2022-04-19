@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Employee {
 
+	private User employeeDetail;
 	private String employeeId;
 	private String idNumber;
 	private boolean isForeigner;
@@ -18,7 +19,8 @@ public class Employee {
 	private int otherMonthlyIncome;
 	private int annualDeductible;
 
-	public Employee(String employeeId, String idNumber, Spouse emplSpouse) {
+	public Employee(String employeeId, String idNumber, Spouse emplSpouse, User emplDetail) {
+		this.employeeDetail = emplDetail;
 		this.employeeId = employeeId;
 		this.idNumber = idNumber;
 		this.employeeSpouse = emplSpouse;
