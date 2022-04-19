@@ -11,15 +11,17 @@ public class Employee {
 	private boolean isForeigner;
 	private LocalDate dateJoined;
 	private int monthWorkingInYear;
+	private Spouse employeeSpouse;
 	private List<Child> childList;
 
 	private int monthlySalary;
 	private int otherMonthlyIncome;
 	private int annualDeductible;
 
-	public Employee(String employeeId, String idNumber) {
+	public Employee(String employeeId, String idNumber, Spouse emplSpouse) {
 		this.employeeId = employeeId;
 		this.idNumber = idNumber;
+		this.employeeSpouse = emplSpouse;
 		this.childList = new LinkedList<Child>();
 	}
 
@@ -70,6 +72,6 @@ public class Employee {
 		}
 
 		return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible,
-				spouseIdNumber.equals(""), childList.size());
+				employeeSpouse.getId().equals(""), childList.size());
 	}
 }
