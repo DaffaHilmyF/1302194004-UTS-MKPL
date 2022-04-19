@@ -13,13 +13,14 @@ public class Employee {
 	private Spouse employeeSpouse;
 	private List<Child> employeeChild;
 	private LocalDate employeeDateJoined;
-	private int monthWorkingInYear;
+	private Salary employeeSalary;
 
-	public Employee(User employeeDetail, Spouse employeeSouse, List<Child> employeeChild) {
+	public Employee(User employeeDetail, Spouse employeeSouse, List<Child> employeeChild, Salary employeeSalary) {
 		this.employeeId = UUID.randomUUID().toString();
 		this.employeeDetail = employeeDetail;
 		this.employeeSpouse = employeeSouse;
 		this.employeeChild = employeeChild;
+		this.employeeSalary = employeeSalary;
 	}
 
 	public String getEmployeeId() {
@@ -42,12 +43,16 @@ public class Employee {
 		return this.employeeDateJoined;
 	}
 
-	public int getMonthWorkingInYear(){
+	public Salary getEmployeeSalary() {
+		return this.employeeSalary;
+	}
+
+	public int getMonthWorkingInYear() {
 		LocalDate date = LocalDate.now();
 		if (date.getYear() == employeeDateJoined.getYear()) {
 			return date.getMonthValue() - date.getMonthValue();
 		}
-		
+
 		return 12;
 	}
 
