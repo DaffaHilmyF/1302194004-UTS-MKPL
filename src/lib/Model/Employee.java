@@ -42,18 +42,20 @@ public class Employee {
 		return this.employeeDateJoined;
 	}
 
+	public int getMonthWorkingInYear(){
+		LocalDate date = LocalDate.now();
+		if (date.getYear() == employeeDateJoined.getYear()) {
+			return date.getMonthValue() - date.getMonthValue();
+		}
+		
+		return 12;
+	}
 
 	public int getAnnualIncomeTax() {
 
 		// Menghitung berapa lama pegawai bekerja dalam setahun ini, jika pegawai sudah
 		// bekerja dari tahun sebelumnya maka otomatis dianggap 12 bulan.
-		LocalDate date = LocalDate.now();
 
-		if (date.getYear() == employeeDateJoined.getYear()) {
-			monthWorkingInYear = date.getMonthValue() - date.getMonthValue();
-		} else {
-			monthWorkingInYear = 12;
-		}
 		return 0;
 		// return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome,
 		// monthWorkingInYear, annualDeductible,
