@@ -42,6 +42,7 @@ public class Employee {
 		return this.employeeDateJoined;
 	}
 
+
 	public int getAnnualIncomeTax() {
 
 		// Menghitung berapa lama pegawai bekerja dalam setahun ini, jika pegawai sudah
