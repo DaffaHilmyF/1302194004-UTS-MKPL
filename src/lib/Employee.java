@@ -16,9 +16,6 @@ public class Employee {
 	private int otherMonthlyIncome;
 	private int annualDeductible;
 
-	private List<String> childNames;
-	private List<String> childIdNumbers;
-
 	public Employee(String employeeId, String idNumber) {
 		this.employeeId = employeeId;
 		this.idNumber = idNumber;
