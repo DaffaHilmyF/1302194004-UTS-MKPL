@@ -17,9 +17,7 @@ public class Employee {
 	private Spouse employeeSpouse;
 	private List<Child> childList;
 
-	private int monthlySalary;
-	private int otherMonthlyIncome;
-	private int annualDeductible;
+	
 
 	public Employee(String employeeId, String idNumber, Spouse emplSpouse, User emplDetail) {
 		this.employeeDetail = emplDetail;
