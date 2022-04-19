@@ -5,24 +5,28 @@ public class User {
         MALE, FEMALE
     }
 
-    private String firstName;
-    private String lastName;
+    private Name name;
     private String address;
     private Gender gender;
+    private boolean isForeigner;
 
-    public User(String firstName, String lastName, String address, Gender gender) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(Name name, String address, Gender gender, boolean isForeigner) {
+        this.name = name;
         this.address = address;
         this.gender = gender;
+        this.setForeigner(isForeigner);
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public boolean isForeigner() {
+        return isForeigner;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setForeigner(boolean isForeigner) {
+        this.isForeigner = isForeigner;
+    }
+
+    public void setFirstName(Name name) {
+        this.name = name;
     }
 
     public void setAddress(String address) {
@@ -33,12 +37,8 @@ public class User {
         this.gender = gender;
     }
 
-    public String getFirstName() {
-        return this.firstName;
-    }
-
-    public String getLastName() {
-        return this.lastName;
+    public Name getFirstName() {
+        return this.name;
     }
 
     public String getAddress() {
