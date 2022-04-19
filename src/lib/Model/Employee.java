@@ -1,8 +1,10 @@
-package lib;
+package lib.Model;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
+
+import lib.TaxFunction;
 
 public class Employee {
 
