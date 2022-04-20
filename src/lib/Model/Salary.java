@@ -46,13 +46,6 @@ public class Salary {
         this.setOtherMonthlyIncome(income);
     }
 
-    /**
-     * Fungsi untuk menentukan gaji bulanan pegawai berdasarkan grade kepegawaiannya
-     * (grade 1: 3.000.000 per bulan, grade 2: 5.000.000 per bulan, grade 3:
-     * 7.000.000 per bulan)
-     * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
-     */
-
     private void setMonthlyIncomeForForigner() {
         int montlyIncome = getMonthlyIncome();
         setMonthlyIncome((int) (montlyIncome * 1.5));
@@ -67,3 +60,4 @@ public class Salary {
         }
     }
 }
+  
