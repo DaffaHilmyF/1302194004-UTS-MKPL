@@ -7,7 +7,7 @@ public class Salary {
         GRADE_THREE,
     }
 
-    public int[] SalaryRage = {3000000, 5000000, 7000000};
+    private int[] salaryRange = { 3000000, 5000000, 7000000 };
 
     private int monthlyIncome;
     private int otherMonthlyIncome;
@@ -58,13 +58,12 @@ public class Salary {
         setMonthlyIncome((int) (montlyIncome * 1.5));
     }
 
-    public void setMonthlySalary(SalaryType grade, boolean isForeigner) {
-        if (grade == 1) {
-            setMonthlyIncome(3000000);
-        } else if (grade == 2) {
-            setMonthlyIncome(5000000);
-        } else if (grade == 3) {
-            setMonthlyIncome(7000000);
+    public void setMonthlySalary(SalaryGrade grade, boolean isForeigner) {
+        int getIncomeFromGrade = salaryRange[(int) grade.ordinal()];
+        setMonthlyIncome(getIncomeFromGrade);
+
+        if(isForeigner){
+            setMonthlyIncomeForForigner();
         }
     }
 }
