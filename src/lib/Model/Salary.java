@@ -1,6 +1,14 @@
 package lib.Model;
 
 public class Salary {
+    public enum SalaryGrade {
+        GRADE_ONE,
+        GRADE_TWO,
+        GRADE_THREE,
+    }
+
+    public int[] SalaryRage = {3000000, 5000000, 7000000};
+
     private int monthlyIncome;
     private int otherMonthlyIncome;
     private int annualDeductible;
@@ -30,32 +38,6 @@ public class Salary {
         this.monthlyIncome = monthlyIncome;
     }
 
-    /**
-     * Fungsi untuk menentukan gaji bulanan pegawai berdasarkan grade kepegawaiannya
-     * (grade 1: 3.000.000 per bulan, grade 2: 5.000.000 per bulan, grade 3:
-     * 7.000.000 per bulan)
-     * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
-     */
-
-    public void setMonthlySalary(int grade, boolean isForeigner) {
-        if (grade == 1) {
-            setMonthlyIncome(3000000);
-            if (isForeigner) {
-                setMonthlyIncome((int) (3000000 * 1.5));
-            }
-        } else if (grade == 2) {
-            setMonthlyIncome(5000000);
-            if (isForeigner) {
-                setMonthlyIncome((int) (3000000 * 1.5));
-            }
-        } else if (grade == 3) {
-            setMonthlyIncome(7000000);
-            if (isForeigner) {
-                setMonthlyIncome((int) (3000000 * 1.5));
-            }
-        }
-    }
-
     public void setAnnualDeductible(int deductible) {
         this.annualDeductible = deductible;
     }
@@ -64,4 +46,25 @@ public class Salary {
         this.setOtherMonthlyIncome(income);
     }
 
+    /**
+     * Fungsi untuk menentukan gaji bulanan pegawai berdasarkan grade kepegawaiannya
+     * (grade 1: 3.000.000 per bulan, grade 2: 5.000.000 per bulan, grade 3:
+     * 7.000.000 per bulan)
+     * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
+     */
+
+    private void setMonthlyIncomeForForigner() {
+        int montlyIncome = getMonthlyIncome();
+        setMonthlyIncome((int) (montlyIncome * 1.5));
+    }
+
+    public void setMonthlySalary(SalaryType grade, boolean isForeigner) {
+        if (grade == 1) {
+            setMonthlyIncome(3000000);
+        } else if (grade == 2) {
+            setMonthlyIncome(5000000);
+        } else if (grade == 3) {
+            setMonthlyIncome(7000000);
+        }
+    }
 }
