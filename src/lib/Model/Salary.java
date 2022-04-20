@@ -1,6 +1,13 @@
 package lib.Model;
 
 public class Salary {
+    public enum SalaryGrade {
+        GRADE_ONE,
+        GRADE_TWO,
+        GRADE_THREE,
+    }
+
+    public int[] SalaryRage = {3000000, 5000000, 7000000};
 
     private int monthlyIncome;
     private int otherMonthlyIncome;
@@ -51,7 +58,7 @@ public class Salary {
         setMonthlyIncome((int) (montlyIncome * 1.5));
     }
 
-    public void setMonthlySalary(int grade, boolean isForeigner) {
+    public void setMonthlySalary(SalaryType grade, boolean isForeigner) {
         if (grade == 1) {
             setMonthlyIncome(3000000);
         } else if (grade == 2) {
@@ -60,8 +67,4 @@ public class Salary {
             setMonthlyIncome(7000000);
         }
     }
-
-
 }
-
-
