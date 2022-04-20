@@ -7,7 +7,27 @@ public class Salary {
 
     public Salary(int otherMontlyIncome, int annualDeductible) {
         this.annualDeductible = annualDeductible;
-        this.otherMonthlyIncome = otherMontlyIncome;
+        this.setOtherMonthlyIncome(otherMontlyIncome);
+    }
+
+    public int getOtherMonthlyIncome() {
+        return otherMonthlyIncome;
+    }
+
+    public void setOtherMonthlyIncome(int otherMonthlyIncome) {
+        this.otherMonthlyIncome = otherMonthlyIncome;
+    }
+
+    public int getMonthlyIncome() {
+        return monthlyIncome;
+    }
+
+    public int getAnnualDeductible() {
+        return annualDeductible;
+    }
+
+    public void setMonthlyIncome(int monthlyIncome) {
+        this.monthlyIncome = monthlyIncome;
     }
 
     /**
@@ -19,19 +39,19 @@ public class Salary {
 
     public void setMonthlySalary(int grade, boolean isForeigner) {
         if (grade == 1) {
-            monthlyIncome = 3000000;
+            setMonthlyIncome(3000000);
             if (isForeigner) {
-                monthlyIncome = (int) (3000000 * 1.5);
+                setMonthlyIncome((int) (3000000 * 1.5));
             }
         } else if (grade == 2) {
-            monthlyIncome = 5000000;
+            setMonthlyIncome(5000000);
             if (isForeigner) {
-                monthlyIncome = (int) (3000000 * 1.5);
+                setMonthlyIncome((int) (3000000 * 1.5));
             }
         } else if (grade == 3) {
-            monthlyIncome = 7000000;
+            setMonthlyIncome(7000000);
             if (isForeigner) {
-                monthlyIncome = (int) (3000000 * 1.5);
+                setMonthlyIncome((int) (3000000 * 1.5));
             }
         }
     }
@@ -41,7 +61,7 @@ public class Salary {
     }
 
     public void setAdditionalIncome(int income) {
-        this.otherMonthlyIncome = income;
+        this.setOtherMonthlyIncome(income);
     }
 
 }
