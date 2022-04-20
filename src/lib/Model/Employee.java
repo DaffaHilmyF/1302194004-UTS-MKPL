@@ -57,13 +57,6 @@ public class Employee {
 	}
 
 	public int getAnnualIncomeTax() {
-
-		// Menghitung berapa lama pegawai bekerja dalam setahun ini, jika pegawai sudah
-		// bekerja dari tahun sebelumnya maka otomatis dianggap 12 bulan.
-
-		return 0;
-		// return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome,
-		// monthWorkingInYear, annualDeductible,
-		// employeeSpouse.getId().equals(""), childList.size());
+		return TaxFunction.calculateTax(this, employeeSalary);
 	}
 }
